@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulation result</title>
+    <style>
+        html{
+            font-family: sans-serif;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<img class="center" th:src="@{/histogram.png}"/>
+<p><a href="/fileData">Back to main page</a></p>
+</body>
+</html>

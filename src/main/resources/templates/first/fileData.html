@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DataSheet</title>
+    <style>
+        html {
+            font-family: sans-serif;
+            font-size: small;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid rgb(200,200,200);
+        }
+        td {
+            border: 1px solid rgb(190,190,190);
+            padding: 5px 20px;
+            text-align: left;
+        }
+        form {
+            margin: 0 auto;
+            width: 390px;
+            padding: 1em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        form li + li {
+            margin-top: 1em;
+        }
+        label {
+            display: inline-block;
+            width: 160px;
+            text-align: right;
+        }
+        input,
+        textarea {
+            font: 1em sans-serif;
+            width: 200px;
+            box-sizing: border-box;
+            border: 1px solid #999;
+        }
+        input:focus,
+        textarea:focus {
+            border-color: #000;
+        }
+        textarea {
+            vertical-align: top;
+            height: 5em;
+        }
+        button {
+            margin-left: 5em;
+        }
+        .button {
+            padding-left: 100px;
+        }
+        .valuesBlock {
+            font: 1.6em sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td></td>
+        <td>2021</td>
+        <td>2022</td>
+        <td>2023</td>
+        <td>2024</td>
+        <td>2025</td>
+        <td>2026</td>
+        <td>2027</td>
+        <td>2028</td>
+        <td>2029</td>
+        <td>2030</td>
+        <td>2031</td>
+        <td>2032</td>
+        <td>2033</td>
+        <td>2034</td>
+        <td>2035</td>
+        <td>2036</td>
+        <td>2037</td>
+    </tr>
+    <tr>
+        <td>Capital expenditure</td>
+        <td th:text="${capEx.get(2021)}"></td>
+        <td th:text="${capEx.get(2022)}"></td>
+        <td th:text="${capEx.get(2023)}"></td>
+        <td th:text="${capEx.get(2024)}"></td>
+        <td th:text="${capEx.get(2025)}"></td>
+        <td th:text="${capEx.get(2026)}"></td>
+        <td th:text="${capEx.get(2027)}"></td>
+        <td th:text="${capEx.get(2028)}"></td>
+        <td th:text="${capEx.get(2029)}"></td>
+        <td th:text="${capEx.get(2030)}"></td>
+        <td th:text="${capEx.get(2031)}"></td>
+        <td th:text="${capEx.get(2032)}"></td>
+        <td th:text="${capEx.get(2033)}"></td>
+        <td th:text="${capEx.get(2034)}"></td>
+        <td th:text="${capEx.get(2035)}"></td>
+        <td th:text="${capEx.get(2036)}"></td>
+        <td th:text="${capEx.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Total revenue</td>
+        <td th:text="${totalRevenue.get(2021)}"></td>
+        <td th:text="${totalRevenue.get(2022)}"></td>
+        <td th:text="${totalRevenue.get(2023)}"></td>
+        <td th:text="${totalRevenue.get(2024)}"></td>
+        <td th:text="${totalRevenue.get(2025)}"></td>
+        <td th:text="${totalRevenue.get(2026)}"></td>
+        <td th:text="${totalRevenue.get(2027)}"></td>
+        <td th:text="${totalRevenue.get(2028)}"></td>
+        <td th:text="${totalRevenue.get(2029)}"></td>
+        <td th:text="${totalRevenue.get(2030)}"></td>
+        <td th:text="${totalRevenue.get(2031)}"></td>
+        <td th:text="${totalRevenue.get(2032)}"></td>
+        <td th:text="${totalRevenue.get(2033)}"></td>
+        <td th:text="${totalRevenue.get(2034)}"></td>
+        <td th:text="${totalRevenue.get(2035)}"></td>
+        <td th:text="${totalRevenue.get(2036)}"></td>
+        <td th:text="${totalRevenue.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Total cost</td>
+        <td th:text="${totalCost.get(2021)}"></td>
+        <td th:text="${totalCost.get(2022)}"></td>
+        <td th:text="${totalCost.get(2023)}"></td>
+        <td th:text="${totalCost.get(2024)}"></td>
+        <td th:text="${totalCost.get(2025)}"></td>
+        <td th:text="${totalCost.get(2026)}"></td>
+        <td th:text="${totalCost.get(2027)}"></td>
+        <td th:text="${totalCost.get(2028)}"></td>
+        <td th:text="${totalCost.get(2029)}"></td>
+        <td th:text="${totalCost.get(2030)}"></td>
+        <td th:text="${totalCost.get(2031)}"></td>
+        <td th:text="${totalCost.get(2032)}"></td>
+        <td th:text="${totalCost.get(2033)}"></td>
+        <td th:text="${totalCost.get(2034)}"></td>
+        <td th:text="${totalCost.get(2035)}"></td>
+        <td th:text="${totalCost.get(2036)}"></td>
+        <td th:text="${totalCost.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Severance tax</td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+        <td th:text="${severanceTax.get(2021)}"></td>
+    </tr>
+    <tr>
+        <td>Depreciation</td>
+        <td th:text="${deprecation.get(2021)}"></td>
+        <td th:text="${deprecation.get(2022)}"></td>
+        <td th:text="${deprecation.get(2023)}"></td>
+        <td th:text="${deprecation.get(2024)}"></td>
+        <td th:text="${deprecation.get(2025)}"></td>
+        <td th:text="${deprecation.get(2026)}"></td>
+        <td th:text="${deprecation.get(2027)}"></td>
+        <td th:text="${deprecation.get(2028)}"></td>
+        <td th:text="${deprecation.get(2029)}"></td>
+        <td th:text="${deprecation.get(2030)}"></td>
+        <td th:text="${deprecation.get(2031)}"></td>
+        <td th:text="${deprecation.get(2032)}"></td>
+        <td th:text="${deprecation.get(2033)}"></td>
+        <td th:text="${deprecation.get(2034)}"></td>
+        <td th:text="${deprecation.get(2035)}"></td>
+        <td th:text="${deprecation.get(2036)}"></td>
+        <td th:text="${deprecation.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>General running costs</td>
+        <td th:text="${genRunCosts.get(2021)}"></td>
+        <td th:text="${genRunCosts.get(2022)}"></td>
+        <td th:text="${genRunCosts.get(2023)}"></td>
+        <td th:text="${genRunCosts.get(2024)}"></td>
+        <td th:text="${genRunCosts.get(2025)}"></td>
+        <td th:text="${genRunCosts.get(2026)}"></td>
+        <td th:text="${genRunCosts.get(2027)}"></td>
+        <td th:text="${genRunCosts.get(2028)}"></td>
+        <td th:text="${genRunCosts.get(2029)}"></td>
+        <td th:text="${genRunCosts.get(2030)}"></td>
+        <td th:text="${genRunCosts.get(2031)}"></td>
+        <td th:text="${genRunCosts.get(2032)}"></td>
+        <td th:text="${genRunCosts.get(2033)}"></td>
+        <td th:text="${genRunCosts.get(2034)}"></td>
+        <td th:text="${genRunCosts.get(2035)}"></td>
+        <td th:text="${genRunCosts.get(2036)}"></td>
+        <td th:text="${genRunCosts.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Operational profit</td>
+        <td th:text="${opProfit.get(2021)}"></td>
+        <td th:text="${opProfit.get(2022)}"></td>
+        <td th:text="${opProfit.get(2023)}"></td>
+        <td th:text="${opProfit.get(2024)}"></td>
+        <td th:text="${opProfit.get(2025)}"></td>
+        <td th:text="${opProfit.get(2026)}"></td>
+        <td th:text="${opProfit.get(2027)}"></td>
+        <td th:text="${opProfit.get(2028)}"></td>
+        <td th:text="${opProfit.get(2029)}"></td>
+        <td th:text="${opProfit.get(2030)}"></td>
+        <td th:text="${opProfit.get(2031)}"></td>
+        <td th:text="${opProfit.get(2032)}"></td>
+        <td th:text="${opProfit.get(2033)}"></td>
+        <td th:text="${opProfit.get(2034)}"></td>
+        <td th:text="${opProfit.get(2035)}"></td>
+        <td th:text="${opProfit.get(2036)}"></td>
+        <td th:text="${opProfit.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Interest payments</td>
+        <td th:text="${intPays.get(2021)}"></td>
+        <td th:text="${intPays.get(2022)}"></td>
+        <td th:text="${intPays.get(2023)}"></td>
+        <td th:text="${intPays.get(2024)}"></td>
+        <td th:text="${intPays.get(2025)}"></td>
+        <td th:text="${intPays.get(2026)}"></td>
+        <td th:text="${intPays.get(2027)}"></td>
+        <td th:text="${intPays.get(2028)}"></td>
+        <td th:text="${intPays.get(2029)}"></td>
+        <td th:text="${intPays.get(2030)}"></td>
+        <td th:text="${intPays.get(2031)}"></td>
+        <td th:text="${intPays.get(2032)}"></td>
+        <td th:text="${intPays.get(2033)}"></td>
+        <td th:text="${intPays.get(2034)}"></td>
+        <td th:text="${intPays.get(2035)}"></td>
+        <td th:text="${intPays.get(2036)}"></td>
+        <td th:text="${intPays.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Profit before tax</td>
+        <td th:text="${profBefTax.get(2021)}"></td>
+        <td th:text="${profBefTax.get(2022)}"></td>
+        <td th:text="${profBefTax.get(2023)}"></td>
+        <td th:text="${profBefTax.get(2024)}"></td>
+        <td th:text="${profBefTax.get(2025)}"></td>
+        <td th:text="${profBefTax.get(2026)}"></td>
+        <td th:text="${profBefTax.get(2027)}"></td>
+        <td th:text="${profBefTax.get(2028)}"></td>
+        <td th:text="${profBefTax.get(2029)}"></td>
+        <td th:text="${profBefTax.get(2030)}"></td>
+        <td th:text="${profBefTax.get(2031)}"></td>
+        <td th:text="${profBefTax.get(2032)}"></td>
+        <td th:text="${profBefTax.get(2033)}"></td>
+        <td th:text="${profBefTax.get(2034)}"></td>
+        <td th:text="${profBefTax.get(2035)}"></td>
+        <td th:text="${profBefTax.get(2036)}"></td>
+        <td th:text="${profBefTax.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Income tax</td>
+        <td th:text="${incomeTax.get(2021)}"></td>
+        <td th:text="${incomeTax.get(2022)}"></td>
+        <td th:text="${incomeTax.get(2023)}"></td>
+        <td th:text="${incomeTax.get(2024)}"></td>
+        <td th:text="${incomeTax.get(2025)}"></td>
+        <td th:text="${incomeTax.get(2026)}"></td>
+        <td th:text="${incomeTax.get(2027)}"></td>
+        <td th:text="${incomeTax.get(2028)}"></td>
+        <td th:text="${incomeTax.get(2029)}"></td>
+        <td th:text="${incomeTax.get(2030)}"></td>
+        <td th:text="${incomeTax.get(2031)}"></td>
+        <td th:text="${incomeTax.get(2032)}"></td>
+        <td th:text="${incomeTax.get(2033)}"></td>
+        <td th:text="${incomeTax.get(2034)}"></td>
+        <td th:text="${incomeTax.get(2035)}"></td>
+        <td th:text="${incomeTax.get(2036)}"></td>
+        <td th:text="${incomeTax.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Net profit</td>
+        <td th:text="${netProfit.get(2021)}"></td>
+        <td th:text="${netProfit.get(2022)}"></td>
+        <td th:text="${netProfit.get(2023)}"></td>
+        <td th:text="${netProfit.get(2024)}"></td>
+        <td th:text="${netProfit.get(2025)}"></td>
+        <td th:text="${netProfit.get(2026)}"></td>
+        <td th:text="${netProfit.get(2027)}"></td>
+        <td th:text="${netProfit.get(2028)}"></td>
+        <td th:text="${netProfit.get(2029)}"></td>
+        <td th:text="${netProfit.get(2030)}"></td>
+        <td th:text="${netProfit.get(2031)}"></td>
+        <td th:text="${netProfit.get(2032)}"></td>
+        <td th:text="${netProfit.get(2033)}"></td>
+        <td th:text="${netProfit.get(2034)}"></td>
+        <td th:text="${netProfit.get(2035)}"></td>
+        <td th:text="${netProfit.get(2036)}"></td>
+        <td th:text="${netProfit.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Cash flow</td>
+        <td th:text="${cashFlow.get(2021)}"></td>
+        <td th:text="${cashFlow.get(2022)}"></td>
+        <td th:text="${cashFlow.get(2023)}"></td>
+        <td th:text="${cashFlow.get(2024)}"></td>
+        <td th:text="${cashFlow.get(2025)}"></td>
+        <td th:text="${cashFlow.get(2026)}"></td>
+        <td th:text="${cashFlow.get(2027)}"></td>
+        <td th:text="${cashFlow.get(2028)}"></td>
+        <td th:text="${cashFlow.get(2029)}"></td>
+        <td th:text="${cashFlow.get(2030)}"></td>
+        <td th:text="${cashFlow.get(2031)}"></td>
+        <td th:text="${cashFlow.get(2032)}"></td>
+        <td th:text="${cashFlow.get(2033)}"></td>
+        <td th:text="${cashFlow.get(2034)}"></td>
+        <td th:text="${cashFlow.get(2035)}"></td>
+        <td th:text="${cashFlow.get(2036)}"></td>
+        <td th:text="${cashFlow.get(2037)}"></td>
+    </tr>
+    <tr>
+        <td>Discounted cash flow</td>
+        <td th:text="${discCashFlow.get(2021)}"></td>
+        <td th:text="${discCashFlow.get(2022)}"></td>
+        <td th:text="${discCashFlow.get(2023)}"></td>
+        <td th:text="${discCashFlow.get(2024)}"></td>
+        <td th:text="${discCashFlow.get(2025)}"></td>
+        <td th:text="${discCashFlow.get(2026)}"></td>
+        <td th:text="${discCashFlow.get(2027)}"></td>
+        <td th:text="${discCashFlow.get(2028)}"></td>
+        <td th:text="${discCashFlow.get(2029)}"></td>
+        <td th:text="${discCashFlow.get(2030)}"></td>
+        <td th:text="${discCashFlow.get(2031)}"></td>
+        <td th:text="${discCashFlow.get(2032)}"></td>
+        <td th:text="${discCashFlow.get(2033)}"></td>
+        <td th:text="${discCashFlow.get(2034)}"></td>
+        <td th:text="${discCashFlow.get(2035)}"></td>
+        <td th:text="${discCashFlow.get(2036)}"></td>
+        <td th:text="${discCashFlow.get(2037)}"></td>
+    </tr>
+</table>
+<div class="valuesBlock">
+    <p th:inline="text">
+        NPV = [[${npv}]] IRR = [[${irr}]] PI = [[${pi}]]
+    </p>
+</div>
+<form action="/getSimulation"  method="post">
+    <ul>
+        <li>
+            <label for="paramSelection">Simulating parameter:</label>
+            <select size="1" name="parameterType" id="paramSelection">
+                <option name="parameterType" value="Total revenue">Total revenue</option>
+                <option name="parameterType" value="Total cost">Total cost</option>
+                <option name="parameterType" value="Operational profit">Operational profit</option>
+                <option name="parameterType" value="Profit before tax">Profit before tax</option>
+                <option name="parameterType" value="Net profit">Net profit</option>
+            </select>
+        </li>
+        <li>
+            <label for="yearSelection">Year:</label>
+            <select size="1" name="year" id="yearSelection">
+                <option name="year" value="2021">2021</option>
+                <option name="year" value="2022">2022</option>
+                <option name="year" value="2023">2023</option>
+                <option name="year" value="2024">2024</option>
+                <option name="year" value="2025">2025</option>
+                <option name="year" value="2026">2026</option>
+                <option name="year" value="2027">2027</option>
+                <option name="year" value="2028">2028</option>
+                <option name="year" value="2029">2029</option>
+                <option name="year" value="2030">2030</option>
+                <option name="year" value="2031">2031</option>
+                <option name="year" value="2032">2032</option>
+                <option name="year" value="2033">2033</option>
+                <option name="year" value="2034">2034</option>
+                <option name="year" value="2035">2035</option>
+                <option name="year" value="2036">2036</option>
+                <option name="year" value="2037">2037</option>
+            </select>
+        </li>
+        <li>
+            <label for="valueSelection">Value type:</label>
+            <select size="1" name="valueType" id="valueSelection">
+                <option name="valueType" value="NPV">NPV</option>
+                <option name="valueType" value="IRR">IRR</option>
+                <option name="valueType" value="PI">PI</option>
+            </select>
+        </li>
+        <li>
+            <label for="testsNum">Tests number:</label>
+            <input name="testsNum" type="text" id="testsNum">
+        </li>
+        <li>
+            <label for="mean">Mean:</label>
+            <input name="mean" type="text" id="mean">
+        </li>
+        <li>
+            <label for="standDev">Standard deviation:</label>
+            <input name="standDev" type="text" id="standDev">
+        </li>
+        <li class="button">
+            <button type="submit">Send</button>
+        </li>
+    </ul>
+</form>
+</body>
+</html>
